@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to my web page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <script>
+        function vali() 
+        {
+            var name = document.getElementById("n1").value;
+            var email = document.getElementById("e1").value;
+            var mobile = document.getElementById("m1").value;
+            var feedback = document.getElementById("f1").value;
+            var expName = /^[a-zA-Z]{2,100}$/;
+            var emailRege = /^[a-z0-9]+@+[a-z0-9._]+$/;
+            var expMobile = /^[6-9][0-9]{9}$/;
+            var expfeed = /^[a-zA-Z0-9]{10,200}$/;
+
+            if (!(expName.test(name))) {
+                document.getElementById("n1").focus();
+                document.getElementById("n11").innerHTML = "*Only Alphabet allowed!!";
+                return false;
+            }
+            else if (!(emailRege.test(email))) {
+                document.getElementById("e1").focus();
+                document.getElementById("e11").innerHTML = "*Include @ in Email Id";
+                return false;
+
+            }
+            else if (!(expMobile.test(mobile))) {
+                document.getElementById("m1").focus();
+                document.getElementById("m11").innerHTML = "*Only 10 digits are allowed";
+                return false;
+
+            }
+            // else if (!(expfeed.test(feedback))) {
+            //     document.getElementById("f1").focus();
+            //     document.getElementById("f11").innerHTML = "*Include 10 min words";
+            //     return false;
+
+            // }
+            else {
+                alert("Form Submitted Successfully");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <main class="container border border-grey" style="background-color: rgb(12, 12, 12)";>
+        <div class="container">
+              <h1 class="text-center
+              ">Contact Us</h1>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="n1">Name:</label>
+                <input type="text" class="form-control" id="n1" placeholder="Enter Name">
+                <p class="text-danger" id="n11"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="e1">Email address:</label>
+                <input type="email" class="form-control" id="e1" aria-describedby="emailHelp" placeholder="Enter email">
+                <p class="text-danger" id="e11"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="m1">Mobile No:</label>
+                <input type="number" class="form-control" id="m1" placeholder="Enter Mobile No">
+                <p class="text-danger" id="m11"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="f1">Message:</label>
+                <input type="text" class="form-control" id="f1" placeholder="Min 10 words">
+                <!-- <p class="text-danger" id="f11"></p> -->
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="c1">
+                <label class="form-check-label" for="c1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="return vali()">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </form>
+
+        <section class="py-3" style="height: 50px;">
+            <p class="text-center">Copyright &copy; 2021 Designed by Ashwathy - All Right Reserved</p>
+        </section>
+    
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
